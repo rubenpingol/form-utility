@@ -1,0 +1,34 @@
+{
+  "name": "form-utility",
+  "version": "1.0.0",
+  "description": "Simple form utility library",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap-v4-dev": "^4.0.0-alpha.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubenpingol/form-utility.git"
+  },
+  "keywords": [
+    "form",
+    "validation",
+    "form",
+    "grid",
+    "form",
+    "utility",
+    "bootstrap",
+    "validation",
+    "form"
+  ],
+  "author": "Ruben Bert Pingol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rubenpingol/form-utility/issues"
+  },
+  "homepage": "https://github.com/rubenpingol/form-utility#readme"
+}
