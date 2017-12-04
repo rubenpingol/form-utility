@@ -20,5 +20,5 @@ But having still the full-control of what happens next after an event happened.
 #### v1.0.0
 * Initial form-utility setup files and dependencies
 
-### v1.0.1
+#### v1.0.1
 * Added form input controls serialization with toggling of verbose and not verbose
