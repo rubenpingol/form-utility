@@ -1,13 +1,48 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Form Validation with Form Utility Library</title>
-    <link rel="stylesheet" href="../node_modules/bootstrap-v4-dev/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-	<h3>Form Validation with Form Utility Library</h3>
+        <h3>Form Validation with Form Utility Library</h3>
+        <form action="../controllers/class.form.php" method="POST" name="" id="" class="formSignUp">
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Username or Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </form>
     </div>
-    <script type="text/javascript" src="../js/form-utility.js" defer></script>
+    <script type="text/javascript" src="../js/form-utility.js"></script>
+    <script>
+        var formUtil = new FormUtility("formSignUp", {
+            select2: true
+        });
+        formUtil.init();
+        formUtil.formSubmit({
+            callback: function(form, event) {
+                if (form.checkValidity()) {
+                    
+                    var xhr = new XMLHttpRequest();
+
+                    xhr.open(form.method, form.action, true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            console.log(this.responseText);
+                        }
+                    };
+                    xhr.send(form.serialize());
+                }
+            }
+        });
+    </script>
 </body>
 </html>

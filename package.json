@@ -1,12 +1,11 @@
 {
-  "name": "form-utility",
-  "version": "1.0.0",
-  "description": "Simple form utility library",
+  "name": "simple_form_utility",
+  "version": "1.0.1",
+  "description": "Simple JavaScript Form Utility Library",
   "main": "index.js",
-  "dependencies": {
-    "bootstrap-v4-dev": "^4.0.0-alpha.6"
+  "directories": {
+    "example": "examples"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,19 +15,21 @@
   },
   "keywords": [
     "form",
-    "validation",
-    "form",
-    "grid",
-    "form",
-    "utility",
-    "bootstrap",
-    "validation",
-    "form"
+    "actions",
+    "helper",
+    "and",
+    "table",
+    "grid"
   ],
   "author": "Ruben Bert Pingol",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rubenpingol/form-utility/issues"
   },
-  "homepage": "https://github.com/rubenpingol/form-utility#readme"
+  "homepage": "https://github.com/rubenpingol/form-utility#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "jquery": "^1.12.4",
+    "popper.js": "^1.13.0"
+  }
 }

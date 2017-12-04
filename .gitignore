@@ -4,3 +4,5 @@ composer.lock
 package-lock.json
 /tmp/
 *.log
+.vscode
+/controllers/
