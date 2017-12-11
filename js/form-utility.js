@@ -33,6 +33,8 @@
                 }
             }
         }
+        
+        this.select2 = defaults.select2;
 
         _initializeMethods.call(this);
     };
@@ -66,7 +68,8 @@
 
             return _serializeForm.call(_this, arg);
         }
-
+        
+        _comboToSelect2.call(_this);
     };
 
     FormUtility.prototype.getForm = function getForm() {
@@ -118,6 +121,24 @@
     FormUtility.prototype.tableGrid = function tableGrid() {
 
     };
+
+    function _comboToSelect2() {
+        var elements = _getFormElements.call(this);
+        for (var i in elements) {
+            if (!isNaN(parseInt(i))) {
+                if (elements[i].type !== "select-one") { continue; }
+
+                if (this.options.select2) {
+                    
+                    if (window.jQuery === undefined) { throw new ReferenceError("jQuery is required to load select2"); }
+        
+                    if (jQuery.prototype.select2 === undefined) { throw new TypeError("Select2 was not found on your source file. See https://select2.org/getting-started/installation for installation."); }
+        
+                    jQuery(elements[i]).select2();
+                }
+            }
+        }
+    }
 
     function _getFormElements() {
 
@@ -202,6 +223,14 @@
         }
     }
 
+    /**
+     * Method to merge object arguments from user-defined arguments and/or values
+     * 
+     * @param object source 
+     * @param object properties 
+     * 
+     * @return object of arguments
+     */
     function _extendedDefaults(source, properties) {
         var property;
         for (property in properties) {
