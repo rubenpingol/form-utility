@@ -175,11 +175,11 @@
     /**
      * Method to serialize form elements into server-readable inputs
      * 
-     * @param boolean $verbose Flag if detailed FormData or not
+     * @param boolean verbose Flag if detailed FormData or not
      * 
      * @return instanceof FormData $data
      */
-    function _serializeForm($verbose) {
+    function _serializeForm(verbose) {
         var elements = _getFormElements.call(this);
         var serializedElements = {};
 
@@ -190,7 +190,23 @@
                         case 'radio':
                             if (elements[elem].checked) {
                                 
-                                if ($verbose) {
+                                if (verbose) {
+                                    var data = {
+                                        type: elements[elem].type,
+                                        value: elements[elem].value
+                                    };
+
+                                    serializedElements[elements[elem].name] = data;
+                                    continue;
+                                }
+
+                                serializedElements[elements[elem].name] = elements[elem].value;
+                            }
+                            break;
+                        case 'checkbox':
+                            if (elements[elem].checked) {
+                                
+                                if (verbose) {
                                     var data = {
                                         type: elements[elem].type,
                                         value: elements[elem].value
@@ -204,7 +220,7 @@
                             }
                             break;
                         default:
-                            if ($verbose) {
+                            if (verbose) {
                                 var data = {
                                     type: elements[elem].type,
                                     value: elements[elem].value
