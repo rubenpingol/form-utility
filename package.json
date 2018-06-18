@@ -28,7 +28,7 @@
   "homepage": "https://github.com/rubenpingol/form-utility#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
-    "jquery": "^1.12.4",
+    "jquery": "^3.3.1",
     "popper.js": "^1.13.0"
   }
 }
